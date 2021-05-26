@@ -13,6 +13,8 @@
 		D30AC179260A313800C056E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30AC178260A313800C056E2 /* Preview Assets.xcassets */; };
 		D30AC184260A313900C056E2 /* Death_NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30AC183260A313900C056E2 /* Death_NoteTests.swift */; };
 		D30AC18F260A313900C056E2 /* Death_NoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30AC18E260A313900C056E2 /* Death_NoteUITests.swift */; };
+		D34B8FD6262F1BCF00363A75 /* handwritingFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D34B8FD5262F1BCE00363A75 /* handwritingFont.ttf */; };
+		D3866824261CA46D0062B149 /* DEATHNOTEFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3866823261CA46D0062B149 /* DEATHNOTEFont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		D30AC18A260A313900C056E2 /* Death NoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Death NoteUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30AC18E260A313900C056E2 /* Death_NoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Death_NoteUITests.swift; sourceTree = "<group>"; };
 		D30AC190260A313900C056E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D34B8FD5262F1BCE00363A75 /* handwritingFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = handwritingFont.ttf; path = "../../../../Downloads/ashcan-bb/handwritingFont.ttf"; sourceTree = "<group>"; };
+		D3866823261CA46D0062B149 /* DEATHNOTEFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DEATHNOTEFont.ttf; path = ../../../../Downloads/DEATHNOTE_Font/DEATHNOTEFont.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				D30AC173260A312400C056E2 /* ContentView.swift */,
 				D30AC175260A313800C056E2 /* Assets.xcassets */,
 				D30AC17A260A313800C056E2 /* Info.plist */,
+				D3866823261CA46D0062B149 /* DEATHNOTEFont.ttf */,
+				D34B8FD5262F1BCE00363A75 /* handwritingFont.ttf */,
 				D30AC177260A313800C056E2 /* Preview Content */,
 			);
 			path = "Death Note";
@@ -233,8 +239,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3866824261CA46D0062B149 /* DEATHNOTEFont.ttf in Resources */,
 				D30AC179260A313800C056E2 /* Preview Assets.xcassets in Resources */,
 				D30AC176260A313800C056E2 /* Assets.xcassets in Resources */,
+				D34B8FD6262F1BCF00363A75 /* handwritingFont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +427,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Death Note/Preview Content\"";
+				DEVELOPMENT_TEAM = NH6Y35HZK7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Death Note/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Death Note/Preview Content\"";
+				DEVELOPMENT_TEAM = NH6Y35HZK7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Death Note/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
