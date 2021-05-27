@@ -72,7 +72,7 @@ struct write: View{
     @State private var name: String = "Input Name"
     @State private var age: String = "Age"
     @State private var cause: String = "Cause of Death"
-    let causes = ["a car crash", "banana peel slip", "heart attack", "spontaneous combustion", "stroke", "sudden slip in the ice rink", "n aneurism", ""]
+    let causes = ["car crash", "banana peel slip", "heart attack", "spontaneous combustion", "stroke", "sudden slip in the ice rink", "aneurism"]
     @State var allBool=false
     var size: CGFloat = (40)
     var body: some View{
@@ -119,12 +119,11 @@ struct write: View{
                     
                     switch(cause){
                     case "": cause = "Heart Attack"; allBool = true
-                    case "DIES OF ACCIDENT": cause = ""; allBool = true
+                    case "DIES OF ACCIDENT": cause = causes.randomElement()!; allBool = true
                     case "Cause of Death": check3 = 0;
                     case nil: cause = "reading failed"; print("cause: reading failed")
                     default: print("cause: reading success | assigned to var"); check3 = 1; allBool = true}
                     if(check1 == 1 && check2 == 1 && check3 == 1){getAlert = false; allBool = true} else{getAlert = true; allBool = false}
-                    if(cause != "aneurism"){cause = (" \(cause)")}
                 }) .font(Font.custom("DEATHNOTE-font", size: 40)) .foregroundColor(.red) .actionSheet(isPresented:$getAlert) {
                     ActionSheet(title: Text("Invalid Information"), message: Text("One of the selections is invalid, to continue you must have valid information."), buttons: [.default(Text("Alright")) {print("")}])}
                 .actionSheet(isPresented:$allBool) {
@@ -175,8 +174,7 @@ func addtoCal(name:String,age:String,cause:String){
             print("Added to Calendar")
             if UserDefaults.standard.object(forKey: "DeathKey") != nil {
                 var mCause: String?
-                if(cause == "n aneurism"){mCause = "aneurism"} else{mCause = cause}
-                var addToKey: String = UserDefaults.standard.string(forKey: "DeathKey")! + ("\(name), \(age); \(mCause)")
+                var addToKey: String = UserDefaults.standard.string(forKey: "DeathKey")! + ("\(name), \(age); \(cause)")
                 UserDefaults.standard.set(addToKey, forKey: "DeathKey")
             } else{UserDefaults.standard.set("\(name), \(age); \(cause)\n", forKey: "DeathKey")}
             print(UserDefaults.standard.string(forKey: "DeathKey"))
@@ -196,6 +194,9 @@ struct paper: View{
             VStack{
                 Text("Name/Age/Cause").font(Font.custom("ashcanBB", size: 20))
                 Text(UserDefaults.standard.string(forKey: "DeathKey")!).font(Font.custom("ashcanBB", size: 20)).multilineTextAlignment(.center)
+                Button("Reset", action: {
+                    UserDefaults.standard.set("", forKey: "DeathKey")
+                }) .font(Font.custom("ashcanBB", size:20))
             }
         }
         .colorScheme(.light)
